@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Units</th>
+      <th>Purchase Price</th>
+      <th>Purchase Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %}
+    <tr>
+      <td>{{ stock.code }}</td>
+      <td>{{ stock.name }}</td>
+      <td>{{ stock.units }}</td>
+      <td>{{ stock.purchase_price }}</td>
+      <td>{{ stock.purchase_date }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

@@ -19,11 +19,8 @@ from django.urls import path, include
 
 # Admin Site Config
 title = "Melbourne Young Investors"
-admin.sites.AdminSite.site_header = title
+admin.sites.AdminSite.site_header = title + " - Admin"
 admin.sites.AdminSite.site_title = title
-admin.sites.AdminSite.index_title = title
+admin.sites.AdminSite.index_title = "Administrative Tools"
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("portfolio/", include("portfolio.urls")),
-]
+urlpatterns = [path("admin/", admin.site.urls), path("", include("portfolio.urls"))]
