@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
 
-{% load static %}
+{% load static %} {% load humanize %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
 
@@ -9,9 +9,10 @@
     <tr>
       <th>Code</th>
       <th>Name</th>
+      <th>Purchase Date</th>
       <th>Units</th>
       <th>Purchase Price</th>
-      <th>Purchase Date</th>
+      <th>Investment</th>
     </tr>
   </thead>
   <tbody>
@@ -19,9 +20,10 @@
     <tr>
       <td>{{ stock.code }}</td>
       <td>{{ stock.name }}</td>
-      <td>{{ stock.units }}</td>
-      <td>{{ stock.purchase_price }}</td>
       <td>{{ stock.purchase_date }}</td>
+      <td>{{ stock.units }}</td>
+      <td>{{ stock.purchase_price | floatformat:"2" }}</td>
+      <td>{{ stock.investment | floatformat:"2" | intcomma }}</td>
     </tr>
     {% endfor %}
   </tbody>
