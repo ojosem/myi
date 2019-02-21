@@ -1,8 +1,12 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %} 
 
-{% load static %} {% load humanize %}
+{% load static %} {% load humanize%}
 
-<link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'portfolio/style.css' %}"
+/>
 
 <table class="table table-bordered table-hover">
   <thead>
@@ -28,5 +32,9 @@
     {% endfor %}
   </tbody>
 </table>
+
+<div>
+  <a href="/export">Export to CSV</a>
+</div>
 
 {% endblock %}
